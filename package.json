@@ -1,0 +1,34 @@
+{
+  "name": "mobilenotifications",
+  "version": "1.0.0",
+  "description": "Send push notifications for iOS and android",
+  "main": "index.js",
+  "scripts": {
+    "tdd": "mocha --compilers js:babel-core/register -R spec -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nschurmann/mobileNotifications.git"
+  },
+  "keywords": [
+    "notifications",
+    "mobile",
+    "push"
+  ],
+  "author": "Nicolás Schürmann <nicolas.schurmann@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nschurmann/mobileNotifications/issues"
+  },
+  "homepage": "https://github.com/nschurmann/mobileNotifications#readme",
+  "dependencies": {
+    "apn": "^1.7.5",
+    "babel-core": "^6.7.6",
+    "babel-plugin-rewire": "^1.0.0-rc-2",
+    "babel-plugin-transform-class-properties": "^6.6.0",
+    "babel-preset-es2015": "^6.6.0",
+    "chai": "^3.5.0",
+    "sinon": "^1.17.3"
+  }
+}
