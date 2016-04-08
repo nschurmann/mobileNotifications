@@ -21,8 +21,11 @@ const conf = {
   }
 }
 
-const service = notification(conf)
-service.send('deviceId', 'Message that will appear in user phone', {
+const ios = notification('ios', conf.ios)
+const android = notification('android', conf.android)
+ios.send('deviceId', 'Message that will appear in user phone', {
   payload: 'the extra amount of data that you want to send'
 })
+
+android.send('deviceId', 'message...', { extra: 'data' })
 ```

@@ -17,9 +17,9 @@ describe('notification', () => {
     let getServiceSpy = sinon.spy(pushStub, 'getService')
 
     notification.__Rewire__('push', pushStub)
-    notification({ service: 'ios' })
+    notification('ios', { extra: 'conf' })
 
-    assert(getServiceSpy.calledWith({ service: 'ios' }), 'getService did not received the service name')
+    assert(getServiceSpy.calledWith('ios', { extra: 'conf' }), 'getService did not received the service name')
     notification.__ResetDependency__('push')
   })
 
