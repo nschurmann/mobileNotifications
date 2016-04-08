@@ -1,8 +1,7 @@
-var _               = require('lodash'),
-    services         = {
-      ios: require('./ios'),
-      android: require('./android'),
-    }
+var services         = {
+  ios: require('./ios'),
+  android: require('./android'),
+}
 
 
 function getService (service, _config) {
@@ -11,12 +10,10 @@ function getService (service, _config) {
     throw new Error('You need to select a service')
   }
 
-  try{
-    return new services[service](_.merge({}, p))
-  }catch(e){
-    throw new Error('The service does not exist')
-  }
+  var s = services[service]
+  if (s == undefined) { throw new Error('The service does not exist') }
 
+  return new s(p)
 }
 
 module.exports = {
