@@ -24,7 +24,7 @@ function Notification (_conf) {
   conf = _conf || {}
   if (!conf.cert || !conf.key) { throw new Error('Must pass at least a cert and key') }
   this.name = 'ios'
-  this.conf = _.merge(conf, { production: false, cacheLength: 100 })
+  this.conf = _.merge({ production: false, cacheLength: 100 }, conf)
   this.con = new apn.Connection(this.conf)
 
   new apn.Feedback(_.merge({}, conf, { batchFeedback: true, interval: 300 }))
